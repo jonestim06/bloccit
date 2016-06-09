@@ -1,5 +1,6 @@
 require 'random_data'
 
+
  # Create Posts
  50.times do
  # #1
@@ -20,6 +21,9 @@ require 'random_data'
      body: RandomData.random_paragraph
    )
  end
+
+Post.find_or_create_by(title: "Unique Title", body: "Unique Body")
+Comment.find_or_create_by(body: "Unique Body")
 
  puts "Seed finished"
  puts "#{Post.count} posts created"
